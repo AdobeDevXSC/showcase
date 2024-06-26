@@ -63,10 +63,10 @@ header nav a:any-link {
 
 /* hamburger */
 header nav .nav-hamburger {
-  display: none;
+  /* display: none; */
   grid-area: hamburger;
   height: 22px;
-  /* display: flex; */
+  display: flex;
   align-items: center;
 }
 
