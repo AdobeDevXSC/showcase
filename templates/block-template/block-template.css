@@ -1,0 +1,29 @@
+.block-template main {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-template main .section.nav {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.block-template main .main-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (width >= 900px) {
+  .block-template main {
+    flex-direction: row;
+  }
+  
+  .block-template main .section.nav {
+    max-width: var(--block-nav-width);
+    position: fixed;
+  }
+  
+  .block-template main .main-wrapper {
+    padding-left: var(--block-nav-width);
+  }
+}

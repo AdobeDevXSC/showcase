@@ -39,6 +39,7 @@
 
   /* nav height */
   --nav-height: 75px;
+  --block-nav-width: 300px;
 }
 
 @font-face {
