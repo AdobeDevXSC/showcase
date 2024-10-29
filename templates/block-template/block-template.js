@@ -5,7 +5,7 @@ export default function decorate(block) {
   mainWrapper.classList.add('main-wrapper');
 
   sections.forEach((section) => {
-    if (!section.classList.contains('nav')) {
+    if (!section.classList.contains('nav-container')) {
       mainWrapper.appendChild(section);
       section.style.display = 'block';
     }
