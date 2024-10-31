@@ -34,6 +34,7 @@
   overflow: unset;
   white-space: unset;
   transition: background-color 0.2s;
+  font-size: 16px;
 }
 
 .tabs .tabs-list button p {

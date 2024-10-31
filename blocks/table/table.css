@@ -40,6 +40,10 @@
   margin: 0;
 }
 
+.table table td p {
+  font-size: 16px;
+}
+
 .table table td p + p {
   margin-top: 0.25em;
 }
@@ -70,4 +74,11 @@
 .table.bordered table th,
 .table.bordered table td {
   border: 1px solid #dadada;
+}
+
+/* other */
+.section.table-container .default-content-wrapper p {
+  margin: 0;
+  /* padding-top: 3px; */
+  font-size: 12px;
 }

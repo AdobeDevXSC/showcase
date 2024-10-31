@@ -202,6 +202,9 @@ main img {
 /* sections */
 main .section {
   padding: 32px 16px;
+}
+
+main .section:not(.nav-container) {
   margin-bottom: 2rem;
 }
 
