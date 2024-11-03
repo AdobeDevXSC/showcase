@@ -134,7 +134,7 @@ a:hover {
 
 code, pre, samp {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-xs);
 }
 
 code, samp {
