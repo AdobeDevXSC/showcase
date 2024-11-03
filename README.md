@@ -1,5 +1,4 @@
-# Your Project's Title...
-Your project's description...
+# Developer XSC Showcase Portfolio
 
 ## Environments
 - Preview: https://main--Showcase--AdobeDevXSC.hlx.page/
