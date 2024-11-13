@@ -33,6 +33,18 @@ export default function CardsPortfolio(block) {
 
     const createSelectOptions = () => {
       return `
+        <label for="options-vertical">Verticals: </label>
+        <select id="options-vertical">
+          <option value="all" ${currentOption === 'all' ? 'selected' : ''}>All</option>
+          <option value="CPG" ${currentOption === 'CPG' ? 'selected' : ''}>CPG</option>
+          <option value="FSI" ${currentOption === 'FSI' ? 'selected' : ''}>FSI</option>
+          <option value="M&E" ${currentOption === 'M&E' ? 'selected' : ''}>M&E</option>
+          <option value="Manufacturing" ${currentOption === 'Manufacturing' ? 'selected' : ''}>Manufacturing</option>
+          <option value="Retail" ${currentOption === 'Retail' ? 'selected' : ''}>Retail</option>
+          <option value="Services" ${currentOption === 'Services' ? 'selected' : ''}>Services</option>
+          <option value="T&H" ${currentOption === 'T&H' ? 'selected' : ''}>T&H</option>
+        </select>
+
         <label for="options">Filter By: </label>
         <select id="options">
           <option value="all" ${currentOption === 'all' ? 'selected' : ''}>All</option>
@@ -62,7 +74,7 @@ export default function CardsPortfolio(block) {
             <div class="card card-info">
               <div class="date-live-wrapper">
                 <span>${formatDate(item.Added)}</span>
-                <span>XSC: ${item.XSC} (${item.Region})</span>
+                <span>XSC: <a href="mailto:${item.XSCEmail}"> ${item.XSC}</a> (${item.Region})</span>
               </div>
               <div class="github-drive-wrapper">
                 ${item.DemoGit ?
@@ -106,8 +118,6 @@ export default function CardsPortfolio(block) {
       group.forEach((item) => {
 
         const xsc = getParameterByName('xsc'); 
-        //console.log(xsc);
-        //console.log(item.XSC);
 
         if ((!xsc) || (item.XSC.toLowerCase() == xsc.toLowerCase())) {
           const isFeatured = item.Featured === 'true';
@@ -174,9 +184,42 @@ export default function CardsPortfolio(block) {
     createCards([filteredData]);
   }
 
+  function handleSelectChange2(event) {
+    currentOption = event.target.value;
+    const currentFilter = block.querySelector('#options').value;
+    //const currentVertical = block.querySelector('#options-vertical').value;
+
+    const filterConditions = {
+      "all": (item) => true,
+      "sharepoint": (item) => item.DocBased === "Microsoft",
+      "google-drive": (item) => item.DocBased === "Google",
+      "dark-alley": (item) => item.DocBased === "DarkAlley",
+      "experimentation": (item) => item.Experimentation === "true",
+      "commerce": (item) => item.Commerce === "true",
+      "forms": (item) => item.Forms === "true",
+      "crosswalk": (item) => item.Crosswalk === "true",
+    };
+
+    // vertical filter function
+    function isVertical(value) {
+      return value.Vertical === currentOption;
+    }
+
+    // filter the showcase demo on the main filter condition
+    var filteredData = data.filter(filterConditions[currentFilter]);
+ 
+    // filter the vertical if a vertical is selected
+    if (currentOption != "all") filteredData = filteredData.filter(isVertical);
+
+    createCards([filteredData]);
+  }
+
   function initEventHandlers() {
     const selectElement = block.querySelector('#options');
     selectElement.addEventListener('change', handleSelectChange);
+
+    //const selectElement2 = block.querySelector('#options-vertical');
+    //selectElement2.addEventListener('change', handleSelectChange2);
 
     // Add card-flip animation
     const cards = block.querySelectorAll('.card-flip');
