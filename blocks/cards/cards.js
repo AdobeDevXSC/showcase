@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { formatDate, replaceDoubleQuotesWithSingle } from './helper-functions.js';
 
@@ -39,10 +40,11 @@ export default function CardsPortfolio(block) {
           <option value="CPG" ${currentOption === 'CPG' ? 'selected' : ''}>CPG</option>
           <option value="FSI" ${currentOption === 'FSI' ? 'selected' : ''}>FSI</option>
           <option value="M&E" ${currentOption === 'M&E' ? 'selected' : ''}>M&E</option>
+          <option value="T&H" ${currentOption === 'T&H' ? 'selected' : ''}>T&H</option>
+          <option value="Healthcare" ${currentOption === 'Healthcare' ? 'selected' : ''}>Healthcare</option>
           <option value="Manufacturing" ${currentOption === 'Manufacturing' ? 'selected' : ''}>Manufacturing</option>
           <option value="Retail" ${currentOption === 'Retail' ? 'selected' : ''}>Retail</option>
           <option value="Services" ${currentOption === 'Services' ? 'selected' : ''}>Services</option>
-          <option value="T&H" ${currentOption === 'T&H' ? 'selected' : ''}>T&H</option>
         </select>
 
         <label for="options">Filter By: </label>
@@ -186,18 +188,18 @@ export default function CardsPortfolio(block) {
 
   function handleSelectChange2(event) {
     currentOption = event.target.value;
-    const currentFilter = block.querySelector('#options').value;
-    //const currentVertical = block.querySelector('#options-vertical').value;
+    const currentVertical = block.querySelector('#options-vertical').value;
 
     const filterConditions = {
       "all": (item) => true,
-      "sharepoint": (item) => item.DocBased === "Microsoft",
-      "google-drive": (item) => item.DocBased === "Google",
-      "dark-alley": (item) => item.DocBased === "DarkAlley",
-      "experimentation": (item) => item.Experimentation === "true",
-      "commerce": (item) => item.Commerce === "true",
-      "forms": (item) => item.Forms === "true",
-      "crosswalk": (item) => item.Crosswalk === "true",
+      "CPG": (item) => item.Vertical === "CPG",
+      "FSI": (item) => item.Vertical === "FSI",
+      "M&E": (item) => item.Vertical === "M&E",
+      "Manufacturing": (item) => item.Vertical === "Manufacturing",
+      "Retail": (item) => item.Vertical === "Retail",
+      "Services": (item) => item.Vertical === "Services",
+      "T&H": (item) => item.Vertical === "T&H",
+      "Healthcare": (item) => item.Vertical === "Healthcare"
     };
 
     // vertical filter function
@@ -206,7 +208,7 @@ export default function CardsPortfolio(block) {
     }
 
     // filter the showcase demo on the main filter condition
-    var filteredData = data.filter(filterConditions[currentFilter]);
+    var filteredData = data.filter(filterConditions[currentVertical]);
  
     // filter the vertical if a vertical is selected
     if (currentOption != "all") filteredData = filteredData.filter(isVertical);
@@ -218,8 +220,8 @@ export default function CardsPortfolio(block) {
     const selectElement = block.querySelector('#options');
     selectElement.addEventListener('change', handleSelectChange);
 
-    //const selectElement2 = block.querySelector('#options-vertical');
-    //selectElement2.addEventListener('change', handleSelectChange2);
+    const selectElement2 = block.querySelector('#options-vertical');
+    selectElement2.addEventListener('change', handleSelectChange2);
 
     // Add card-flip animation
     const cards = block.querySelectorAll('.card-flip');
