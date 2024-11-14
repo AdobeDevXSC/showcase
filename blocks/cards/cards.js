@@ -77,7 +77,7 @@ export default function CardsPortfolio(block) {
             <div class="card card-info">
               <div class="date-live-wrapper">
                 <span>${formatDate(item.Added)}</span>
-                <span>XSC: <a href="mailto:${item.XSCEmail}"> ${item.XSC}</a> (${item.Region})</span>
+                <span>XSC: <a href="mailto:${item.XSCEmail}?Subject=${item.Opportunity} Door Opener"> ${item.XSC}</a> (${item.Region})</span>
               </div>
               <div class="github-drive-wrapper">
                 ${item.DemoGit ?
