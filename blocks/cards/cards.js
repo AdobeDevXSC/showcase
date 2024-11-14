@@ -39,6 +39,7 @@ export default function CardsPortfolio(block) {
           <option value="all" ${currentOption === 'all' ? 'selected' : ''}>All</option>
           <option value="CPG" ${currentOption === 'CPG' ? 'selected' : ''}>CPG</option>
           <option value="FSI" ${currentOption === 'FSI' ? 'selected' : ''}>FSI</option>
+          <option value="High Tech" ${currentOption === 'High Tech' ? 'selected' : ''}>High Tech</option>
           <option value="M&E" ${currentOption === 'M&E' ? 'selected' : ''}>M&E</option>
           <option value="T&H" ${currentOption === 'T&H' ? 'selected' : ''}>T&H</option>
           <option value="Healthcare" ${currentOption === 'Healthcare' ? 'selected' : ''}>Healthcare</option>
@@ -186,7 +187,7 @@ export default function CardsPortfolio(block) {
     createCards([filteredData]);
   }
 
-  function handleSelectChange2(event) {
+  function handleSelectChangeVertical(event) {
     currentOption = event.target.value;
     const currentVertical = block.querySelector('#options-vertical').value;
 
@@ -194,6 +195,7 @@ export default function CardsPortfolio(block) {
       "all": (item) => true,
       "CPG": (item) => item.Vertical === "CPG",
       "FSI": (item) => item.Vertical === "FSI",
+      "High Tech": (item) => item.Vertical === "High Tech",
       "M&E": (item) => item.Vertical === "M&E",
       "Manufacturing": (item) => item.Vertical === "Manufacturing",
       "Retail": (item) => item.Vertical === "Retail",
@@ -220,8 +222,8 @@ export default function CardsPortfolio(block) {
     const selectElement = block.querySelector('#options');
     selectElement.addEventListener('change', handleSelectChange);
 
-    const selectElement2 = block.querySelector('#options-vertical');
-    selectElement2.addEventListener('change', handleSelectChange2);
+    const selectElementVirtical = block.querySelector('#options-vertical');
+    selectElementVirtical.addEventListener('change', handleSelectChangeVertical);
 
     // Add card-flip animation
     const cards = block.querySelectorAll('.card-flip');
