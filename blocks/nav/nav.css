@@ -10,7 +10,8 @@
   display: block;
 }
 
-.nav.block ul li a:hover {
+.nav.block ul li a:hover,
+.nav.block .nav-block-item.active {
   background-color: #f4f4f4;
   text-decoration: none;
   border-radius: 4px;

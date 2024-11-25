@@ -8,11 +8,21 @@ export default function decorate(block) {
 
     data.forEach((item) => {
       const createdLi = document.createElement('li');
-      createdLi.innerHTML = `<a href="${item.url}" class="nav-block-item" aria-label="${item.name}">${item.name}</a>`;
+      createdLi.innerHTML = `<a href="${item.url}" class="nav-block-item" aria-label="${item.name.toLowerCase()}">${item.name}</a>`;
       ul.append(createdLi);
     });
 
     block.append(ul);
+  }
+
+  function setActiveTab() {
+    const activeBlock = window.location.pathname.split('/').pop();
+    // console.log("activeBlock: ", activeBlock);
+
+    const targetedList = block.querySelector('ul');
+    const targetedListItem = targetedList.querySelector(`li a[aria-label="${activeBlock}"]`);
+    console.log(targetedListItem);
+    targetedListItem.classList.add('active');
   }
 
   async function initialize() {
@@ -22,6 +32,7 @@ export default function decorate(block) {
       const jsonData = await response.json();
       data = jsonData?.data;
       modifyHTML();
+      setActiveTab();
     }
   }
 
