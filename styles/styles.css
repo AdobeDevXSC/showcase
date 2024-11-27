@@ -139,6 +139,7 @@ code, pre, samp {
 
 code, samp {
   padding: .125em;
+  font-size: 14px;
 }
 
 pre {

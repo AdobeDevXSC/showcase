@@ -54,6 +54,10 @@
   overflow: auto;
 }
 
+.tabs .tabs-panel p {
+  font-size: 16px;
+}
+
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
 }
