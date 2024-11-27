@@ -21,7 +21,7 @@ export default function decorate(block) {
 
     const targetedList = block.querySelector('ul');
     const targetedListItem = targetedList.querySelector(`li a[aria-label="${activeBlock}"]`);
-    console.log(targetedListItem);
+    // console.log(targetedListItem);
     targetedListItem.classList.add('active');
   }
 

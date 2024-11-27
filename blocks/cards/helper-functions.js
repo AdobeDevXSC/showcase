@@ -8,14 +8,13 @@ function excelDateToJSDate(serial) {
 
 export function formatDate(dateStr) {
   let date;
-  
+
   // Check if the string can be parsed as a number (Excel serial date)
   if (!isNaN(dateStr)) {
-      const serial = parseInt(dateStr, 10);
-      date = excelDateToJSDate(serial);
+    const serial = parseInt(dateStr, 10);
+    date = excelDateToJSDate(serial);
   } else {
-      // Otherwise, assume it's a standard date string and parse it
-      date = new Date(dateStr);
+    // Otherwise, assume it's a standard date string and parse it date = new Date(dateStr);
   }
 
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
@@ -23,5 +22,5 @@ export function formatDate(dateStr) {
 }
 
 export function replaceDoubleQuotesWithSingle(string) {
-  return string.replace(/"/g, "'").replace(/\n/g, "<br>");
+  return string.replace(/"/g, "'").replace(/\n/g, '<br>');
 }
