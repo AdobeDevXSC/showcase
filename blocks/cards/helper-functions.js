@@ -10,7 +10,7 @@ export function formatDate(dateStr) {
   let date;
 
   // Check if the string can be parsed as a number (Excel serial date)
-  if (!isNaN(dateStr)) {
+  if (!Number.isNaN(dateStr)) {
     const serial = parseInt(dateStr, 10);
     date = excelDateToJSDate(serial);
   } else {

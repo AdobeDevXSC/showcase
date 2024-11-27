@@ -82,7 +82,7 @@ const TEMPLATE_LIST = [
  * Run template specific decoration code.
  * @param {Element} main The container element
  */
-async function decorateTemplates(main) {  
+async function decorateTemplates(main) {
   try {
     const template = getMetadata('template');
     const templates = TEMPLATE_LIST;
