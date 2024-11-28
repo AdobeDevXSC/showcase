@@ -127,8 +127,10 @@ export default function CardsPortfolio(block) {
       group.forEach((item) => {
 
         const xsc = getParameterByName('xsc'); 
+        const closed = getParameterByName('closed');
 
-        if ((!xsc) || (item.XSC.toLowerCase() == xsc.toLowerCase())) {
+        if (((!xsc) || (item.XSC.toLowerCase() == xsc.toLowerCase())) && ((!closed) || (item.Win))) 
+        {
           const isFeatured = item.Featured === 'true';
           updatedCards.push(createCardHTML(item, isFeatured));
         }
