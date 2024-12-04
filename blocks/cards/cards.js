@@ -52,7 +52,7 @@ export default function CardsPortfolio(block) {
         <label for="options">Filter By: </label>
         <select id="options">
           <option value="All" ${currentOption === 'All' ? 'selected' : ''}>All</option>
-          <option value="Sharepoint" ${currentOption === 'Sharepoint' ? 'selected' : ''}>DocBased - SharePoint</option>
+          <option value="Microsoft" ${currentOption === 'Microsoft' ? 'selected' : ''}>DocBased - SharePoint</option>
           <option value="Google" ${currentOption === 'Google' ? 'selected' : ''}>DocBased - Google Drive</option>
           <option value="DarkAlley" ${currentOption === 'DarkAlley' ? 'selected' : ''}>DocBased - Dark Alley</option>
           <option value="Experimentation" ${currentOption === 'Experimentation' ? 'selected' : ''}>Experimentation</option>
@@ -176,7 +176,6 @@ export default function CardsPortfolio(block) {
   }
 
   function filterData() {
-
     let filteredArray = [...data].filter((i) => {
 
       // Filter only for Vertical
@@ -186,7 +185,7 @@ export default function CardsPortfolio(block) {
 
       // Filter only for currentOption
       if (currentOption !== 'All' && currentVertical == 'All') {
-        if (currentOption === 'Sharepoint' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'DarkAlley') {
           return i.DocBased === currentOption;
         } else {
           return i[currentOption] === 'true';
@@ -195,7 +194,7 @@ export default function CardsPortfolio(block) {
 
       // Filter by both currentOption and currentVertical
       if (currentOption !== 'All' && currentVertical !== 'All') {
-        if (currentOption === 'Sharepoint' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'DarkAlley') {
           return i.Vertical === currentVertical && i.DocBased === currentOption;
         } else {
           return i.Vertical === currentVertical && i[currentOption] === 'true';
