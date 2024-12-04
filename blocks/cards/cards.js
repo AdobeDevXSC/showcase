@@ -187,7 +187,7 @@ export default function CardsPortfolio(block) {
       // Filter only for currentOption
       if (currentOption !== 'All' && currentVertical == 'All') {
         if (currentOption === 'Sharepoint' || currentOption === 'Google' || currentOption === 'DarkAlley') {
-          return i.DocBased = currentOption;
+          return i.DocBased === currentOption;
         } else {
           return i[currentOption] === 'true';
         }
