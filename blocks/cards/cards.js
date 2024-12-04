@@ -5,7 +5,8 @@ import { formatDate, replaceDoubleQuotesWithSingle } from './helper-functions.js
 export default function CardsPortfolio(block) {
   const link = block.querySelector('a');
   let data = [];
-  let currentOption = 'all';
+  let currentOption = 'All';
+  let currentVertical = 'All';
 
   block.textContent = '';
 
@@ -36,28 +37,28 @@ export default function CardsPortfolio(block) {
       return `
         <label for="options-vertical">Verticals: </label>
         <select id="options-vertical">
-          <option value="all" ${currentOption === 'all' ? 'selected' : ''}>All</option>
-          <option value="CPG" ${currentOption === 'CPG' ? 'selected' : ''}>CPG</option>
-          <option value="FSI" ${currentOption === 'FSI' ? 'selected' : ''}>FSI</option>
-          <option value="High Tech" ${currentOption === 'High Tech' ? 'selected' : ''}>High Tech</option>
-          <option value="M&E" ${currentOption === 'M&E' ? 'selected' : ''}>M&E</option>
-          <option value="T&H" ${currentOption === 'T&H' ? 'selected' : ''}>T&H</option>
-          <option value="Healthcare" ${currentOption === 'Healthcare' ? 'selected' : ''}>Healthcare</option>
-          <option value="Manufacturing" ${currentOption === 'Manufacturing' ? 'selected' : ''}>Manufacturing</option>
-          <option value="Retail" ${currentOption === 'Retail' ? 'selected' : ''}>Retail</option>
-          <option value="Services" ${currentOption === 'Services' ? 'selected' : ''}>Services</option>
+          <option value="All" ${currentVertical === 'All' ? 'selected' : ''}>All</option>
+          <option value="CPG" ${currentVertical === 'CPG' ? 'selected' : ''}>CPG</option>
+          <option value="FSI" ${currentVertical === 'FSI' ? 'selected' : ''}>FSI</option>
+          <option value="High Tech" ${currentVertical === 'High Tech' ? 'selected' : ''}>High Tech</option>
+          <option value="M&E" ${currentVertical === 'M&E' ? 'selected' : ''}>M&E</option>
+          <option value="T&H" ${currentVertical === 'T&H' ? 'selected' : ''}>T&H</option>
+          <option value="Healthcare" ${currentVertical === 'Healthcare' ? 'selected' : ''}>Healthcare</option>
+          <option value="Manufacturing" ${currentVertical === 'Manufacturing' ? 'selected' : ''}>Manufacturing</option>
+          <option value="Retail" ${currentVertical === 'Retail' ? 'selected' : ''}>Retail</option>
+          <option value="Services" ${currentVertical === 'Services' ? 'selected' : ''}>Services</option>
         </select>
 
         <label for="options">Filter By: </label>
         <select id="options">
-          <option value="all" ${currentOption === 'all' ? 'selected' : ''}>All</option>
-          <option value="sharepoint" ${currentOption === 'sharepoint' ? 'selected' : ''}>DocBased - SharePoint</option>
-          <option value="google-drive" ${currentOption === 'google-drive' ? 'selected' : ''}>DocBased - Google Drive</option>
-          <option value="dark-alley" ${currentOption === 'dark-alley' ? 'selected' : ''}>DocBased - Dark Alley</option>
-          <option value="experimentation" ${currentOption === 'experimentation' ? 'selected' : ''}>Experimentation</option>
-          <option value="commerce" ${currentOption === 'commerce' ? 'selected' : ''}>Commerce</option>
-          <option value="forms" ${currentOption === 'forms' ? 'selected' : ''}>Forms</option>
-          <option value="crosswalk" ${currentOption === 'crosswalk' ? 'selected' : ''}>Crosswalk</option>
+          <option value="All" ${currentOption === 'All' ? 'selected' : ''}>All</option>
+          <option value="Sharepoint" ${currentOption === 'Sharepoint' ? 'selected' : ''}>DocBased - SharePoint</option>
+          <option value="Google" ${currentOption === 'Google' ? 'selected' : ''}>DocBased - Google Drive</option>
+          <option value="DarkAlley" ${currentOption === 'DarkAlley' ? 'selected' : ''}>DocBased - Dark Alley</option>
+          <option value="Experimentation" ${currentOption === 'Experimentation' ? 'selected' : ''}>Experimentation</option>
+          <option value="Commerce" ${currentOption === 'Commerce' ? 'selected' : ''}>Commerce</option>
+          <option value="Forms" ${currentOption === 'Forms' ? 'selected' : ''}>Forms</option>
+          <option value="Crosswalk" ${currentOption === 'Crosswalk' ? 'selected' : ''}>Crosswalk</option>
         </select>
       `;
     };
@@ -125,12 +126,10 @@ export default function CardsPortfolio(block) {
 
     groups.forEach((group) => {
       group.forEach((item) => {
-
         const xsc = getParameterByName('xsc'); 
         const closed = getParameterByName('closed');
 
-        if (((!xsc) || (item.XSC.toLowerCase() == xsc.toLowerCase())) && ((!closed) || (item.Win))) 
-        {
+        if (((!xsc) || (item.XSC.toLowerCase() == xsc.toLowerCase())) && ((!closed) || (item.Win))) {
           const isFeatured = item.Featured === 'true';
           updatedCards.push(createCardHTML(item, isFeatured));
         }
@@ -141,7 +140,7 @@ export default function CardsPortfolio(block) {
       <div class="portfolio-card-container">
         <div class="filter-container">${createSelectOptions()}</div>
         <div class="small-card-container">
-          ${updatedCards.join('')}
+          ${groups.length === 0 || groups[0].length === 0 ? '<p>No results</p>' : updatedCards.join('')}
         </div>
       </div>
       <div class="modal" id="demoModal">
@@ -176,54 +175,54 @@ export default function CardsPortfolio(block) {
     return result;
   }
 
+  function filterData() {
+
+    let filteredArray = [...data].filter((i) => {
+
+      // Filter only for Vertical
+      if (currentOption === 'All' && currentVertical !== 'All' ) {
+        return i.Vertical === currentVertical;
+      }
+
+      // Filter only for currentOption
+      if (currentOption !== 'All' && currentVertical == 'All') {
+        if (currentOption === 'Sharepoint' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+          return i.DocBased = currentOption;
+        } else {
+          return i[currentOption] === 'true';
+        }
+      }
+
+      // Filter by both currentOption and currentVertical
+      if (currentOption !== 'All' && currentVertical !== 'All') {
+        if (currentOption === 'Sharepoint' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+          return i.Vertical === currentVertical && i.DocBased === currentOption;
+        } else {
+          return i.Vertical === currentVertical && i[currentOption] === 'true';
+        }
+      }
+
+      // Filter for both
+      if (currentOption === 'All' && currentVertical === 'All') {
+        return i;
+      }
+    });
+
+    // Create dynamic cards
+    createCards([filteredArray]);
+
+    //need to clear the filteredArray after creating the cards
+    filteredArray = [];
+  }
+
   function handleSelectChange(event) {
     currentOption = event.target.value;
-
-    const filterConditions = {
-      "all": (item) => true,
-      "sharepoint": (item) => item.DocBased === "Microsoft",
-      "google-drive": (item) => item.DocBased === "Google",
-      "dark-alley": (item) => item.DocBased === "DarkAlley",
-      "experimentation": (item) => item.Experimentation === "true",
-      "commerce": (item) => item.Commerce === "true",
-      "forms": (item) => item.Forms === "true",
-      "crosswalk": (item) => item.Crosswalk === "true",
-    };
-
-    const filteredData = data.filter(filterConditions[currentOption]);
-
-    createCards([filteredData]);
+    filterData();
   }
 
   function handleSelectChangeVertical(event) {
-    currentOption = event.target.value;
-    const currentVertical = block.querySelector('#options-vertical').value;
-
-    const filterConditions = {
-      "all": (item) => true,
-      "CPG": (item) => item.Vertical === "CPG",
-      "FSI": (item) => item.Vertical === "FSI",
-      "High Tech": (item) => item.Vertical === "High Tech",
-      "M&E": (item) => item.Vertical === "M&E",
-      "Manufacturing": (item) => item.Vertical === "Manufacturing",
-      "Retail": (item) => item.Vertical === "Retail",
-      "Services": (item) => item.Vertical === "Services",
-      "T&H": (item) => item.Vertical === "T&H",
-      "Healthcare": (item) => item.Vertical === "Healthcare"
-    };
-
-    // vertical filter function
-    function isVertical(value) {
-      return value.Vertical === currentOption;
-    }
-
-    // filter the showcase demo on the main filter condition
-    var filteredData = data.filter(filterConditions[currentVertical]);
- 
-    // filter the vertical if a vertical is selected
-    if (currentOption != "all") filteredData = filteredData.filter(isVertical);
-
-    createCards([filteredData]);
+    currentVertical = event.target.value;
+    filterData();
   }
 
   function initEventHandlers() {
