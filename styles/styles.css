@@ -102,7 +102,6 @@ p, dl, ol, ul, pre, blockquote {
 
 code, pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
 }
 
 code {
@@ -139,7 +138,7 @@ code, pre, samp {
 
 code, samp {
   padding: .125em;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 pre {

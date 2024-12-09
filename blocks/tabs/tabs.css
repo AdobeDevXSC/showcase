@@ -62,6 +62,16 @@
   display: none;
 }
 
+.tabs .tabs-panel img {
+  max-height: 300px;
+  width: auto;
+  display: block;
+}
+
+.tabs .tabs-panel code {
+  font-size: 10px;
+}
+
 .tabs-wrapper:not(:last-of-type) {
   margin-bottom: 2rem;
 }
