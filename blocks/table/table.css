@@ -58,6 +58,12 @@
   background-color: var(--light-color);
 }
 
+/* bordered variant */
+.table.bordered table td,
+.table.bordered table th {
+  border: 1px solid #dadada;
+}
+
 .table.striped tbody tr > td {
   text-align: center
 }
@@ -70,16 +76,9 @@
   text-align: center;
 }
 
-/* bordered variant */
-.table.bordered table th,
-.table.bordered table td {
-  border: 1px solid #dadada;
-}
-
 /* other */
 .section.table-container .default-content-wrapper p {
   margin: 0;
-  /* padding-top: 3px; */
   font-size: 12px;
 }
 

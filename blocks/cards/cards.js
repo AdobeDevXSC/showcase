@@ -149,7 +149,7 @@ export default function CardsPortfolio(block) {
             <div>Demo Notes</div>
             <span class="close">&times;</span>
           </div>
-          <div id="demoNotesContent"></div>
+          <div id="demo-notes-content"></div>
         </div>
       </div>`;
 
@@ -262,7 +262,7 @@ export default function CardsPortfolio(block) {
         const demoNotes = button.getAttribute('data-demo-notes');
         const demoTitle = button.getAttribute('data-demo-title');
         const modal = document.getElementById('demoModal');
-        const modalContent = document.getElementById('demoNotesContent');
+        const modalContent = document.getElementById('demo-notes-content');
         const modalHeader = modal.querySelector('.modal-header div');
 
         modalContent.innerHTML = demoNotes;

@@ -15,7 +15,7 @@
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
   --background-color: white;
-  --light-color: rgb(250, 250, 250);
+  --light-color: rgb(250 250 250);
   --dark-color: #ccc;
   --text-color: black;
 
@@ -112,6 +112,16 @@ pre {
   overflow: scroll;
 }
 
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-xs);
+}
+
+code, samp {
+  padding: .125em;
+  font-size: 10px;
+}
+
 main pre {
   background-color: var(--light-color);
   padding: 1em;
@@ -129,20 +139,6 @@ a:any-link {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
-}
-
-code, pre, samp {
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-xs);
-}
-
-code, samp {
-  padding: .125em;
-  font-size: 10px;
-}
-
-pre {
-  overflow: scroll;
 }
 
 /* buttons */
@@ -210,7 +206,7 @@ main .section:not(.nav-container) {
 
 main .main-wrapper .section:not(:first-of-type) {
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0 0 0 / 10%);
 }
 
 @media (width >= 600px) {
