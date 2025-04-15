@@ -1,37 +1,36 @@
-/* Cards - Portfolio */
-.cards.portfolio .portfolio-card-container {
+.do-demos .portfolio-card-container {
   display: grid;
   gap: 16px;
 }
 
-.cards.portfolio .filter-container {
+.do-demos .filter-container {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
 @media (width <= 768px)  {
-  .cards.portfolio .filter-container {
+  .do-demos .filter-container {
     justify-content: flex-start;
     flex-direction: column;
   }
 }
 
-.cards.portfolio .filter-container label {
+.do-demos .filter-container label {
   font-size: 18px;
 }
 
-.cards.portfolio .filter-container select {
+.do-demos .filter-container select {
   font-size: 18px;
 }
 
-.cards.portfolio .small-card-container {
+.do-demos .small-card-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
-.cards.portfolio .small-card {
+.do-demos .small-card {
   display: flex;
   width: 100%;
   height: 100%;
@@ -40,24 +39,24 @@
   font-size: 20px; 
 }
 
-.cards.portfolio .small-card .wrapper {
+.do-demos .small-card .wrapper {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0 0 0 / 20%), 0 6px 20px 0 rgba(0 0 0 / 20%);
   width: 100%;
   height: 100%;
 }
 
-.cards.portfolio .small-card .card-images {
+.do-demos .small-card .card-images {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-.cards.portfolio .small-card .card-images picture:first-of-type {
+.do-demos .small-card .card-images picture:first-of-type {
   position: relative;
 }
 
-.cards.portfolio .small-card .card-images picture:last-of-type {
+.do-demos .small-card .card-images picture:last-of-type {
   position: absolute;
   left: 0;
   /* stylelint-disable-next-line */
@@ -66,7 +65,7 @@
   height: -webkit-fill-available;
 }
 
-.cards.portfolio .small-card .card-images picture:last-of-type::before {
+.do-demos .small-card .card-images picture:last-of-type::before {
     content: '';
     position: absolute;
     top: 0;
@@ -78,39 +77,39 @@
     border-radius: 5px;
 }
 
-.cards.portfolio .github-drive-wrapper .icon img {
+.do-demos .github-drive-wrapper .icon img {
   object-fit: cover;
 }
 
-.cards.portfolio .small-card .card-images picture img {
+.do-demos .small-card .card-images picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.cards.portfolio .github-drive-wrapper .github-link:hover img {
+.do-demos .github-drive-wrapper .github-link:hover img {
   filter: invert(100%); 
 }
 
-.cards.portfolio .small-card .card-images:hover picture:first-of-type img {
+.do-demos .small-card .card-images:hover picture:first-of-type img {
   opacity: 0.9;
   transform: scale(1.05);
   transition: transform 0.3s ease-out;
 }
 
-.cards.portfolio .small-card .card-images:hover {
+.do-demos .small-card .card-images:hover {
   overflow: hidden;
   border-radius: 5px;
 }
 
-.cards.portfolio .links-wrapper span {
+.do-demos .links-wrapper span {
   font-size: 16px;
   color: #000;
   font-weight: 500;
 }
 
-.cards.portfolio .small-card .card-images.featured span {
+.do-demos .small-card .card-images.featured span {
   position: absolute;
   top: 0;
   color: #fff;
@@ -120,11 +119,11 @@
   font-weight: 900;
 }
 
-.cards.portfolio .small-card .card-images.featured:hover span {
+.do-demos .small-card .card-images.featured:hover span {
   color: #000;
 }
 
-.cards.portfolio .small-card .card-images .demo-title {
+.do-demos .small-card .card-images .demo-title {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -137,11 +136,11 @@
   border-radius: 10px 0 5px;
 }
 
-.cards.portfolio .small-card .card-images .demo-title:hover {
+.do-demos .small-card .card-images .demo-title:hover {
   text-decoration: none;
 }
 
-.cards.portfolio .small-card .card-info {
+.do-demos .small-card .card-info {
   transform: rotateY(180deg);
   padding: 1rem;
   box-sizing: border-box;
@@ -151,7 +150,7 @@
   cursor: default;
 }
 
-.cards.portfolio .small-card .card-info .demo-site-link {
+.do-demos .small-card .card-info .demo-site-link {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 700;
@@ -165,7 +164,7 @@
   display: inline-block;
 }
 
-.cards.portfolio .small-card .card-info .date-live-wrapper {
+.do-demos .small-card .card-info .date-live-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,39 +172,39 @@
   margin-bottom: 1.5rem;
 }
 
-.cards.portfolio .small-card .card-info .date-live-wrapper > div {
+.do-demos .small-card .card-info .date-live-wrapper > div {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.cards.portfolio .small-card .card-info .date-live-wrapper span:last-of-type {
+.do-demos .small-card .card-info .date-live-wrapper span:last-of-type {
   font-size: 16px;
   color: #808080;
 }
 
-.cards.portfolio .github-drive-wrapper {
+.do-demos .github-drive-wrapper {
   margin: auto 0;
   display: flex;
   flex-direction: row;
 }
 
-.cards.portfolio .github-drive-wrapper .demo-info-wrapper {
+.do-demos .github-drive-wrapper .demo-info-wrapper {
   margin-left: auto;
 }
 
-.cards.portfolio .github-drive-wrapper .demo-info-btn {
+.do-demos .github-drive-wrapper .demo-info-btn {
   margin-top: 0.75rem;
   font-size: 18px;
   border-radius: 5px;
 }
 
-.cards.portfolio .github-drive-wrapper .icon {
+.do-demos .github-drive-wrapper .icon {
   width: 80px;
   height: 53px;
 }
 
-.cards.portfolio .github-drive-wrapper .github-link {
+.do-demos .github-drive-wrapper .github-link {
   background-color: #000;
   display: inline-block;
   /* stylelint-disable-next-line */
@@ -213,51 +212,51 @@
   border-radius: 5px;
 }
 
-.cards.portfolio .github-drive-wrapper .github-link:hover {
+.do-demos .github-drive-wrapper .github-link:hover {
   background-color: #ccc;
 }
 
-.cards.portfolio .related-wrapper {
+.do-demos .related-wrapper {
   margin: auto 0;
 }
 
-.cards.portfolio .related-wrapper .pill {
+.do-demos .related-wrapper .pill {
   font-size: 16px;
   border-radius: 5px;
   padding: 5px 12px;
 }
 
-.cards.portfolio .related-wrapper .pill.experimentation {
+.do-demos .related-wrapper .pill.experimentation {
   background-color: green;
   color: white;
 }
 
-.cards.portfolio .related-wrapper .pill.commerce {
+.do-demos .related-wrapper .pill.commerce {
   background-color: yellow;
 }
 
-.cards.portfolio .related-wrapper .pill.forms {
+.do-demos .related-wrapper .pill.forms {
   background-color: purple;
   color: white;
 }
 
-.cards.portfolio .related-wrapper .pill.crosswalk {
+.do-demos .related-wrapper .pill.crosswalk {
   background-color: blue;
   color: white;
 }
 
-.cards.portfolio .links-wrapper {
+.do-demos .links-wrapper {
   margin: auto 0;
 }
 
 
-.cards.portfolio .links-wrapper a {
+.do-demos .links-wrapper a {
   font-size: 16px;
   color: #000;
   font-weight: 900;
 }
 
-.cards.portfolio .small-card .card-info .demo-site-link:hover {
+.do-demos .small-card .card-info .demo-site-link:hover {
   text-decoration: none;
   background-color: #AD0300;
   color: #fff;
@@ -265,12 +264,12 @@
   border: 1px solid transparent;
 }
 
-.cards.portfolio .small-card .card-info p {
+.do-demos .small-card .card-info p {
   font-size: 14px;
   margin: 0;
 }
 
-.cards.portfolio .small-card .card-flip {
+.do-demos .small-card .card-flip {
   position: relative;
   width: 100%;
   height: 100%;
@@ -279,19 +278,19 @@
   transition: transform 0.75s;
 }
 
-.cards.portfolio .small-card .card-flip.is-flipped {
+.do-demos .small-card .card-flip.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
 }
 
-.cards.portfolio .small-card .card-flip .card.card-images.featured {
+.do-demos .small-card .card-flip .card.card-images.featured {
   transition: visibility 0s 0.75s, opacity 0.75s linear;
 }
 
-.cards.portfolio .small-card .card-flip.is-flipped .card.card-images {
+.do-demos .small-card .card-flip.is-flipped .card.card-images {
   opacity: 0;
 }
 
-.cards.portfolio .small-card .card {
+.do-demos .small-card .card {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -306,24 +305,22 @@
 }
 
 @media (width >= 1301px) {
-  .cards.portfolio .small-card-container {
+  .do-demos .small-card-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (width >= 768px) and (width <= 1300px) {
-  .cards.portfolio .small-card-container {
+  .do-demos .small-card-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (width <= 768px) {
-  .cards.portfolio .small-card-container {
+  .do-demos .small-card-container {
     grid-template-columns: 1fr;
   }
 }
-
-/* End of Cards - Portfolio */
 
 /* grid-4 */
 .cards.grid-4 > ul {
