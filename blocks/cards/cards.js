@@ -54,7 +54,7 @@ export default function CardsPortfolio(block) {
           <option value="All" ${currentOption === 'All' ? 'selected' : ''}>All</option>
           <option value="Microsoft" ${currentOption === 'Microsoft' ? 'selected' : ''}>DocBased - SharePoint</option>
           <option value="Google" ${currentOption === 'Google' ? 'selected' : ''}>DocBased - Google Drive</option>
-          <option value="DarkAlley" ${currentOption === 'DarkAlley' ? 'selected' : ''}>DocBased - Dark Alley</option>
+          <option value="Document Author" ${currentOption === 'Document Author' ? 'selected' : ''}>DocBased - Document Author</option>
           <option value="Experimentation" ${currentOption === 'Experimentation' ? 'selected' : ''}>Experimentation</option>
           <option value="Commerce" ${currentOption === 'Commerce' ? 'selected' : ''}>Commerce</option>
           <option value="Forms" ${currentOption === 'Forms' ? 'selected' : ''}>Forms</option>
@@ -94,7 +94,7 @@ export default function CardsPortfolio(block) {
                 : ""}
                 ${item.DocBased ?
                   `<div class="icon">
-                    <img src="${item.DocBased === "Google" ? "/icons/google-drive-logo.svg" : item.DocBased === "Microsoft" ? "/icons/sharepoint-logo.svg" : item.DocBased === "DarkAlley" ? "/icons/adobe-logo-placeholder.svg" : "" }" alt="" />
+                    <img src="${item.DocBased === "Google" ? "/icons/google-drive-logo.svg" : item.DocBased === "Microsoft" ? "/icons/sharepoint-logo.svg" : item.DocBased === "Document Author" ? "/icons/adobe-logo-placeholder.svg" : "" }" alt="" />
                   </div>`
                 : ""}
                 ${isDevelopmentMode() ?
@@ -185,7 +185,7 @@ export default function CardsPortfolio(block) {
 
       // Filter only for currentOption
       if (currentOption !== 'All' && currentVertical == 'All') {
-        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'Document Author') {
           return i.DocBased === currentOption;
         } else {
           return i[currentOption] === 'true';
@@ -194,7 +194,7 @@ export default function CardsPortfolio(block) {
 
       // Filter by both currentOption and currentVertical
       if (currentOption !== 'All' && currentVertical !== 'All') {
-        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'DarkAlley') {
+        if (currentOption === 'Microsoft' || currentOption === 'Google' || currentOption === 'Document Author') {
           return i.Vertical === currentVertical && i.DocBased === currentOption;
         } else {
           return i.Vertical === currentVertical && i[currentOption] === 'true';
