@@ -60,6 +60,11 @@
   }
 }
 
+html,body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-size: var(--body-font-size-xs);
   margin: 0;
@@ -67,12 +72,13 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
-  display: none;
+  display: flex;
+  flex-direction: column;
 }
 
-body.appear {
+/* body.appear {
   display: block;
-}
+} */
 
 header {
   height: var(--nav-height);
@@ -120,6 +126,10 @@ code, pre, samp {
 code, samp {
   padding: .125em;
   font-size: 10px;
+}
+
+main {
+  flex: 1;
 }
 
 main pre {
@@ -197,7 +207,7 @@ main img {
 
 /* sections */
 main .section {
-  padding: 32px 16px;
+  padding: 16px;
 }
 
 main .main-wrapper .section:not(:first-of-type) {
@@ -207,7 +217,7 @@ main .main-wrapper .section:not(:first-of-type) {
 
 @media (width >= 600px) {
   main .section {
-    padding: 32px;
+    padding: 32px 16px;
   }
 }
 
@@ -219,9 +229,21 @@ main .main-wrapper .section:not(:first-of-type) {
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
+main .section.light {
   background-color: var(--light-color);
+}
+
+main .section.highlight {
+  background: linear-gradient(90deg, rgb(113, 37, 182) 0%, rgb(183, 34, 133) 26%, rgb(235, 16, 0) 63%, rgb(255, 98, 87)) 100% center;
+}
+
+main .section.highlight > div {
+  color: #fff;
+}
+
+main .section.highlight > div > h1,
+main .section.highlight > div > p {
+  margin: 0;
 }
 
 main .section.full-width {

@@ -23,17 +23,19 @@
 
 .video-banner .play-pause-button {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 2rem;
+  left: unset;
+  bottom: unset;
+  top: 0;
+  right: 0;
+  margin: 1rem;
   padding: 4px 8px;
   border-radius: 50%;
   background-color: transparent;
   border: 2px solid #fff;
   font-size: 14px;
-  top: unset;
   filter: drop-shadow(-1px 1px 4px rgba(0, 0, 0, 1.0));
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .video-banner > div:not(.desktop-video-container) {
@@ -61,5 +63,13 @@
   .video-banner h2 {
     font-size: var(--heading-font-size-xl);
     margin: 0;
+  }
+
+  .video-banner .play-pause-button {
+    margin: 2rem;
+    left: 0;
+    bottom: 0;
+    top: unset;
+    right: unset;
   }
 }

@@ -1,4 +1,8 @@
 /* header and nav layout */
+header .header {
+  height: inherit;
+}
+
 header .nav-wrapper {
   background-color: var(--light-color);
   width: 100%;
