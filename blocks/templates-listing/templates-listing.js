@@ -27,7 +27,7 @@ export default async function decorate(block) {
       li.innerHTML = `
         <div class="cards-card-image">
           <div class="resources">
-            <div><a href="${item.GitHub}" title="GitHub"><img src="/icons/github-logo.svg"></img></a></div>
+            <div><a href="${item.GitHub}" title="GitHub" target="_blank"><img src="/icons/github-logo.svg"></img></a></div>
           </div>
           ${optimizedMainImage.outerHTML}
         </div>
