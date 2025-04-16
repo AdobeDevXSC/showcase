@@ -237,13 +237,19 @@ main .section.highlight {
   background: linear-gradient(90deg, rgb(113, 37, 182) 0%, rgb(183, 34, 133) 26%, rgb(235, 16, 0) 63%, rgb(255, 98, 87)) 100% center;
 }
 
-main .section.highlight > div {
+main .section.highlight > .default-content-wrapper {
   color: #fff;
 }
 
-main .section.highlight > div > h1,
-main .section.highlight > div > p {
+main .section.highlight > .default-content-wrapper > h1,
+main .section.highlight > .default-content-wrapper > p {
   margin: 0;
+}
+
+main .section.highlight > .default-content-wrapper a {
+  color: inherit;
+  text-decoration: underline;
+  font-style: italic;
 }
 
 main .section.full-width {
@@ -252,6 +258,18 @@ main .section.full-width {
 
 main .section.full-width > div {
   max-width: 100%;
+}
+
+main .section.sm-padding {
+  padding: 1rem;
+}
+
+main .section.md-padding {
+  padding: 2.5rem 1rem;
+}
+
+main .section.lg-padding {
+  padding: 5rem 1rem;
 }
 
 /* other */

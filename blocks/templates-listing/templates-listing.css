@@ -1,0 +1,125 @@
+/* default cards css */
+.templates-listing > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.templates-listing > ul > li {
+  background-color: var(--background-color);
+}
+
+.templates-listing .cards-card-body {
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.templates-listing .cards-card-body > p {
+  font-weight: 700;
+  margin: 0;
+}
+
+.templates-listing .cards-card-body .tags {
+  line-height: normal;
+  font-size: 12px;
+}
+
+.templates-listing .cards-card-body .tags .tag {
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.templates-listing .cards-card-body .tags .tag-email {
+  background-color: #e0f0ff;
+  color: #005a9e;
+}
+
+.templates-listing .cards-card-body .tags .tag-display {
+  background-color: #e6ffe0;
+  color: #2e7d32;
+}
+
+.templates-listing .cards-card-body .tags .tag-meta {
+  background-color: #ffeaea;
+  color: #c62828;
+}
+
+.templates-listing .cards-card-image {
+  border: 1px solid #dadada;
+  line-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 16px, rgba(0, 0, 0, 0.12) 0px 3px 6px;
+  position: relative;
+}
+
+/* Image + picture setup */
+.templates-listing .cards-card-image picture,
+.templates-listing .cards-card-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide picture smoothly */
+.templates-listing > ul > li:hover .cards-card-image picture {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* .resources overlay styles */
+.templates-listing .cards-card-image .resources {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  background-color: #333333;
+
+  z-index: 2;
+}
+
+/* Fade in .resources */
+.templates-listing > ul > li:hover .cards-card-image .resources {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.templates-listing-container .default-content-wrapper p {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .templates-listing > ul {
+    grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
+    grid-auto-rows: 1fr;
+  }
+
+  .templates-listing .cards-card-image picture,
+  .templates-listing .cards-card-image img {
+    height: 475px;
+  }
+}
