@@ -7,6 +7,7 @@ export default function CardsPortfolio(block) {
   let data = [];
   let currentOption = 'All';
   let currentVertical = 'All';
+  let totalCardsCount = 0;
 
   block.textContent = '';
 
@@ -138,7 +139,7 @@ export default function CardsPortfolio(block) {
 
     block.innerHTML = `
       <div class="portfolio-card-container">
-        <div class="filter-container">${createSelectOptions()}</div>
+        <div class="filter-container"><div class="count">${totalCardsCount} demos</div>${createSelectOptions()}</div>
         <div class="small-card-container">
           ${groups.length === 0 || groups[0].length === 0 ? '<p>No results</p>' : updatedCards.join('')}
         </div>
@@ -301,6 +302,7 @@ export default function CardsPortfolio(block) {
     if (response.ok) {
       const jsonData = await response.json();
       data = jsonData.data;
+      totalCardsCount = data.length;
       createCards(sortData(data));
     }
   }

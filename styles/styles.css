@@ -224,6 +224,14 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
+main .section.full-width {
+  padding: 0;
+}
+
+main .section.full-width > div {
+  max-width: 100%;
+}
+
 /* other */
 
 /* Modal Container */

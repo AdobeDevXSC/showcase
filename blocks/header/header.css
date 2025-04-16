@@ -4,7 +4,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
-  box-shadow: 0 4px 6px -1px rgba(10 29 41 / 10%), 0 2px 4px -1px rgba(40 134 187 / 60%);
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 6px 32px, rgba(0, 0, 0, 0.1) 0px 3px 12px;
 }
 
 header nav {

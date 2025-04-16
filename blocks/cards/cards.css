@@ -89,3 +89,9 @@
 .cards.links .cards-card-body p {
   margin: 0;
 }
+
+@media (width <= 900px) {
+  .cards.links .cards-card-body h2 {
+    font-size: 28px;
+  }
+}

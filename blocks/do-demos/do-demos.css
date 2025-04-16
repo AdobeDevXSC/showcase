@@ -9,6 +9,10 @@
   gap: 10px;
 }
 
+.do-demos .filter-container .count {
+  margin-right: auto;
+}
+
 @media (width <= 768px)  {
   .do-demos .filter-container {
     justify-content: flex-start;
@@ -35,7 +39,7 @@
   width: 100%;
   height: 100%;
   perspective: 600px; /* animation */
-  min-height: 325px;
+  min-height: 300px;
   font-size: 20px; 
 }
 
