@@ -1,4 +1,6 @@
 # Developer XSC Showcase Portfolio
+- Door Opener Program
+- GSPeM Templates
 
 ## Environments
 - Preview: https://main--Showcase--AdobeDevXSC.hlx.page/
