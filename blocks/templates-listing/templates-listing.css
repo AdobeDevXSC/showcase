@@ -71,7 +71,6 @@
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
   border-radius: 10px;
-  /* overflow: hidden; */
 }
 
 .templates-listing .cards-card-image-flip .flip-inner.flipped {
@@ -106,7 +105,7 @@
 
 /* === Back side of the image (resources) === */
 .templates-listing .cards-card-image-flip .flip-back {
-  background-color: #333333; /* <- Dark background fix */
+  background-color: #333333;
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
@@ -123,7 +122,7 @@
   height: 100%;
   gap: 10px;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5em;
 }
 
 .templates-listing .cards-card-image-flip .flip-back .resources .tags {
@@ -158,7 +157,7 @@
 .templates-listing .cards-card-image-flip .flip-back .resources img {
   width: 60px;
   height: auto;
-  filter: brightness(0) invert(1); /* makes the icon pop on dark background */
+  filter: brightness(0) invert(1);
 }
 
 /* === Hide legacy resources section === */
@@ -176,4 +175,57 @@
   .templates-listing .cards-card-image-flip {
     height: 475px;
   }
+}
+
+/* === Modal Styles === */
+.tag-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-modal.show {
+  display: flex;
+}
+
+.tag-modal-content {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.tag-modal-close {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  color: #999;
+}
+
+.tag-modal-close:hover {
+  color: #000;
+}
+
+.tag-modal-body img {
+  margin-top: 1em;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tag-modal-body a {
+  word-break: break-all;
+  font-size: 0.9rem;
 }
