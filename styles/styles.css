@@ -208,6 +208,14 @@ main img {
 /* sections */
 main .section {
   padding: 16px;
+  background-color: white;
+  position: relative;
+  z-index: -2;
+}
+
+main .block {
+  position: relative;
+  z-index: 1;
 }
 
 main .main-wrapper .section:not(:first-of-type) {

@@ -1,4 +1,8 @@
 /* default cards css */
+.cards {
+  position: relative;
+  z-index: 1;
+}
 .cards > ul {
   display: grid;
   grid-template-columns: 1fr;

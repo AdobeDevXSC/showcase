@@ -1,3 +1,4 @@
+import decorate from '../blocks/hero/hero.js';
 import {
   sampleRUM,
   buildBlock,
@@ -56,6 +57,10 @@ function buildAutoBlocks(main) {
     console.error('Auto Blocking failed', error);
   }
 }
+
+// function decorateButtons(main) {
+//   libDecorateButtons(main);
+// }
 
 /**
  * Decorates the main element.
