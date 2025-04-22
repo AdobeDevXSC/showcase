@@ -1,3 +1,4 @@
+import decorate from '../blocks/hero/hero.js';
 import {
   sampleRUM,
   buildBlock,

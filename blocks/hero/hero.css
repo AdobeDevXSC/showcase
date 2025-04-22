@@ -6,12 +6,14 @@ main .hero-container > div {
   
 main .hero-container {
   padding: 0;
+  position: relative;
+  z-index: -1;
 }
 
 .hero {
   position: relative;
   padding: 32px;
-  min-height: 275px;
+  min-height: 375px;
 }
 
 .hero h1,
@@ -24,6 +26,7 @@ main .hero-container {
 
 .hero h1 {
   margin-bottom: 0;
+  margin-top: 200px;
 }
 
 .hero h4 {
@@ -32,7 +35,8 @@ main .hero-container {
 }
 
 .hero picture {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   z-index: -1;
   inset: 0;
   object-fit: cover;

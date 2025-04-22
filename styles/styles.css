@@ -208,7 +208,10 @@ main img {
 /* sections */
 main .section {
   padding: 16px;
+  background-color: white;
 }
+
+
 
 main .main-wrapper .section:not(:first-of-type) {
   border-radius: 10px;
