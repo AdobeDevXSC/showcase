@@ -13,10 +13,10 @@ export default function decorate(block) {
 
     /* wrap each card with link */
     const existingLink = li.querySelector('a');
-    if (existingLink?.href) {
-      const { href } = existingLink;
+    if (existingLink?.textContent) {
+      const { textContent } = existingLink;
       const wrapperLink = document.createElement('a');
-      wrapperLink.href = href;
+      wrapperLink.href = textContent;
 
       // Move all children of li into the wrapperLink
       while (li.firstChild) {
